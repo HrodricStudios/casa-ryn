@@ -1,0 +1,107 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
+
+// Lista de tus productos (ajusta nombres de archivo y extensiones)
+const products = [
+  { id: 1, src: "/productos/griferia.jpg", alt: "Griferia de alta calidad" },
+  { id: 2, src: "/productos/accesorio.jpg", alt: "Accesorios para baño y cocina" },
+  { id: 3, src: "/productos/sanitarios.jpg", alt: "Sanitarios modernos" },
+];
+
+const ProductsCarousel = () => {
+  const sectionRef = useRef(null);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
+  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
+  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const onSelect = () => {
+      setPrevBtnDisabled(!emblaApi.canScrollPrev());
+      setNextBtnDisabled(!emblaApi.canScrollNext());
+    };
+
+    emblaApi.on("select", onSelect);
+    onSelect();
+
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi]);
+
+  const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
+  const scrollNext = () => emblaApi && emblaApi.scrollNext();
+
+  return (
+    <section id="productos" ref={sectionRef} className="fade-up py-16 md:py-24 bg-lila/30">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-violetaOscuro mb-12">
+          Nuestros Productos
+        </h2>
+
+        <div className="relative">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex gap-6">
+              {products.map((product) => (
+                <div
+                  key={product.id}
+                  className="flex-[0_0_80%] sm:flex-[0_0_45%] lg:flex-[0_0_30%] relative h-80 rounded-xl overflow-hidden shadow-lg group"
+                >
+                  <Image
+                    src={product.src}
+                    alt={product.alt}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-violetaOscuro/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+                    <span className="text-white font-semibold text-lg">{product.alt}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <button
+            onClick={scrollPrev}
+            disabled={prevBtnDisabled}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4 bg-white/90 hover:bg-white text-violetaOscuro p-2 rounded-full shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all z-10"
+          >
+            <ChevronLeft size={28} />
+          </button>
+          <button
+            onClick={scrollNext}
+            disabled={nextBtnDisabled}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4 bg-white/90 hover:bg-white text-violetaOscuro p-2 rounded-full shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all z-10"
+          >
+            <ChevronRight size={28} />
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ProductsCarousel;
