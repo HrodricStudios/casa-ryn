@@ -73,8 +73,8 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Botón de WhatsApp */}
-          <div className="md:mt-16">
+          {/* Columna derecha: botón centrado en móvil, alineado a la derecha en desktop */}
+          <div className="flex-1 flex justify-center md:justify-end mt-8 md:mt-0">
             <a
               href="https://wa.me/542477619534?text=Hola%20Casa%20RyN,%20me%20gustaría%20solicitar%20un%20presupuesto"
               target="_blank"
