@@ -42,7 +42,7 @@ const Hero = () => {
       </div>
 
       {/* Contenido */}
-      <div className="container mx-auto px-4 relative z-10 w-full mt-16 md:mt-24 lg:mt-32">
+      <div className="container mx-auto px-4 relative z-10 w-full mt-24 md:mt-32 lg:mt-40">
         <div className="max-w-2xl text-left md:transform md:translate-x-[2cm] md:translate-y-[2cm]">
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-tight font-montserrat bg-gradient-to-r from-white via-violetaClaro to-white bg-clip-text text-transparent animate-shimmer">
             CASA RyN

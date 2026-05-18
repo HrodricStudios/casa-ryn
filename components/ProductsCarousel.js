@@ -64,7 +64,7 @@ const ProductsCarousel = () => {
 
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-6">
+            <div className="flex gap-6 pr-6">
               {products.map((product) => (
                 <div
                   key={product.id}
