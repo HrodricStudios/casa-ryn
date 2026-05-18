@@ -29,21 +29,21 @@ const Hero = () => {
       ref={sectionRef}
       className="fade-up relative min-h-[90vh] md:min-h-[90vh] flex items-start justify-start overflow-hidden"
     >
-      {/* Fondo con ajuste para mobile */}
+      {/* Fondo */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/nueva2.jpeg"
           alt="Fondo Casa RyN"
           fill
-          className="object-cover object-center md:object-center"
+          className="object-cover object-center"
           priority
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
-      {/* Contenido desplazado hacia abajo (el doble en móvil) */}
-      <div className="container mx-auto px-4 relative z-10 w-full mt-48 md:mt-24 lg:mt-32">
+      {/* Contenido desplazado hacia abajo: triple en móvil (mt-72) */}
+      <div className="container mx-auto px-4 relative z-10 w-full mt-72 md:mt-24 lg:mt-32">
         <div className="max-w-2xl text-left">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight leading-tight font-montserrat bg-gradient-to-r from-white via-violetaClaro to-white bg-clip-text text-transparent animate-shimmer">
             CASA RyN

@@ -4,11 +4,10 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
-// Lista de tus productos (ajusta nombres de archivo y extensiones)
 const products = [
-  { id: 1, src: "/productos/griferia.jpg", alt: "Griferia de alta calidad" },
-  { id: 2, src: "/productos/accesorio.jpg", alt: "Accesorios para baño y cocina" },
-  { id: 3, src: "/productos/sanitarios.jpg", alt: "Sanitarios modernos" },
+  { id: 1, src: "/griferia.jpg", alt: "Griferia de alta calidad" },
+  { id: 2, src: "/accesorio.jpg", alt: "Accesorios para baño y cocina" },
+  { id: 3, src: "/sanitario.jpg", alt: "Sanitarios modernos" },
 ];
 
 const ProductsCarousel = () => {
@@ -28,28 +27,19 @@ const ProductsCarousel = () => {
       },
       { threshold: 0.1 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
     if (!emblaApi) return;
-
     const onSelect = () => {
       setPrevBtnDisabled(!emblaApi.canScrollPrev());
       setNextBtnDisabled(!emblaApi.canScrollNext());
     };
-
     emblaApi.on("select", onSelect);
     onSelect();
-
-    return () => {
-      emblaApi.off("select", onSelect);
-    };
+    return () => emblaApi.off("select", onSelect);
   }, [emblaApi]);
 
   const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
@@ -61,10 +51,10 @@ const ProductsCarousel = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center text-violetaOscuro mb-12">
           Nuestros Productos
         </h2>
-
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-6 pr-6">
+            {/* Agregamos px-6 para que la primera y última imagen tengan el mismo espacio lateral */}
+            <div className="flex gap-6 px-6">
               {products.map((product) => (
                 <div
                   key={product.id}
@@ -83,7 +73,6 @@ const ProductsCarousel = () => {
               ))}
             </div>
           </div>
-
           <button
             onClick={scrollPrev}
             disabled={prevBtnDisabled}
