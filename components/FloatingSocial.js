@@ -4,9 +4,9 @@ import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 const FloatingSocial = () => {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
-      {/* WhatsApp */}
+      {/* WhatsApp con nuevo número */}
       <a
-        href="https://wa.me/542477619534?text=Hola%20Casa%20RyN,%20me%20gustaría%20solicitar%20un%20presupuesto"
+        href="https://wa.me/542477467749?text=Hola%20Casa%20RyN,%20me%20gustaría%20solicitar%20un%20presupuesto"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-green-500 text-white p-3 rounded-full shadow-xl hover:scale-110 transition-all duration-300 animate-heartbeat"
@@ -15,7 +15,7 @@ const FloatingSocial = () => {
         <FaWhatsapp size={32} />
       </a>
       
-      {/* Instagram */}
+      {/* Instagram (sin cambios) */}
       <a
         href="https://www.instagram.com/casa.ryn/"
         target="_blank"

@@ -17,11 +17,7 @@ const Contact = () => {
       },
       { threshold: 0.1 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
@@ -31,19 +27,17 @@ const Contact = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center text-violetaOscuro mb-12">
           Contacto
         </h2>
-
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           {/* Información de contacto */}
           <div className="flex-1 bg-white rounded-2xl shadow-xl p-6 md:p-8">
             <h3 className="text-2xl font-bold text-violetaOscuro mb-6">Información</h3>
-            
             <div className="space-y-5">
+              {/* Teléfono unificado */}
               <div className="flex items-center gap-3">
                 <Phone className="text-violetaClaro" size={24} />
                 <div>
-                  <p className="font-semibold">Teléfonos</p>
-                  <p className="text-gray-700">+54 2477 61-9534</p>
-                  <p className="text-gray-700">+54 2477 31-2472</p>
+                  <p className="font-semibold">Teléfono</p>
+                  <p className="text-gray-700">+54 2477 467749</p>
                 </div>
               </div>
 
@@ -81,17 +75,17 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Mapa de Google con la ubicación exacta de Casa RyN */}
+          {/* Mapa de Google */}
           <div className="flex-1 rounded-2xl overflow-hidden shadow-xl h-80 md:h-auto min-h-[400px]">
             <iframe
-              src="https://www.google.com/maps?q=-33.8939827,-60.5882235&hl=es&z=16&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d106480.56568033837!2d-60.5882235!3d-33.8939827!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b84badbdeef27d%3A0x3d58dac26035d7a2!2sCasa%20RyN%20S!5e0!3m2!1ses!2sar!4v1712697654321!5m2!1ses!2sar"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Ubicación de Casa RyN - Blvd. Florencio Sánchez 1090, Pergamino"
+              title="Ubicación de Casa RyN"
             ></iframe>
           </div>
         </div>

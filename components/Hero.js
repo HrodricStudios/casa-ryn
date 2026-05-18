@@ -55,7 +55,7 @@ const Hero = () => {
 
           <div className="mt-8 md:mt-10 animate-float">
             <a
-              href="https://wa.me/542477619534?text=Hola%20Casa%20RyN,%20me%20gustaría%20solicitar%20un%20presupuesto"
+              href="https://wa.me/542477467749?text=Hola%20Casa%20RyN,%20me%20gustaría%20solicitar%20un%20presupuesto"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-violetaClaro hover:bg-violetaOscuro text-white font-bold py-2.5 px-5 md:py-3 md:px-6 rounded-full text-sm md:text-lg shadow-xl transition-all duration-300 hover:scale-105"
