@@ -17,6 +17,11 @@ const oswald = Oswald({
 export const metadata = {
   title: "Casa RyN - Grifería y Sanitarios de calidad",
   description: "Te esperamos con los mejores productos en grifería, sanitarios y accesorios.",
+  icons: {
+    icon: "/logo.png",      // favicon principal
+    shortcut: "/logo.png",  // atajo
+    apple: "/logo.png",     // ícono para dispositivos Apple
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -5,9 +5,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 const products = [
-  { id: 1, src: "/griferia.jpg", alt: "Griferia de alta calidad" },
-  { id: 2, src: "/accesorio.jpg", alt: "Accesorios para baño y cocina" },
-  { id: 3, src: "/sanitario.jpg", alt: "Sanitarios modernos" },
+  { id: 1, src: "/productos/griferia.jpg", alt: "Griferia de alta calidad" },
+  { id: 2, src: "/productos/accesorio.jpg", alt: "Accesorios para baño y cocina" },
+  { id: 3, src: "/productos/sanitarios.jpg", alt: "Sanitarios modernos" },
 ];
 
 const ProductsCarousel = () => {
