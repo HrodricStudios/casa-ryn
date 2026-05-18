@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        montserrat: ["var(--font-montserrat)", "sans-serif"],
+        oswald: ["var(--font-oswald)", "sans-serif"],
+      },
       colors: {
         lila: "#e9d5ff",
         violeta: "#6b21a8",
