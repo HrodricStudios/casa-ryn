@@ -42,7 +42,7 @@ const Navbar = () => {
       }`}
     >
       {/* Navbar principal con fondo blanco */}
-      <div className={`bg-white py-3 md:py-4 ${scrolled ? "shadow-md" : ""}`}>
+      <div className={`bg-neutral-50 py-3 md:py-4 ${scrolled ? "shadow-md" : ""}`}>
         <div className="container mx-auto px-2 md:px-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
