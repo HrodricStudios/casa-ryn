@@ -42,11 +42,11 @@ const Navbar = () => {
       }`}
     >
       {/* Navbar principal con fondo blanco */}
-      <div className={`bg-neutral-50 py-3 md:py-4 ${scrolled ? "shadow-md" : ""}`}>
+      <div className={`bg-[#c9c9c9] py-3 md:py-4 ${scrolled ? "shadow-md" : ""}`}>
         <div className="container mx-auto px-2 md:px-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <button onClick={handleLogoClick} className="relative h-12 w-32 md:h-16 md:w-52 focus:outline-none">
+            <button onClick={handleLogoClick} className="relative h-14 w-36 md:h-20 md:w-60 focus:outline-none">
               <Image src="/logo.png" alt="Casa RyN Logo" fill className="object-contain" priority />
             </button>
 
