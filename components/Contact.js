@@ -22,8 +22,8 @@ const Contact = () => {
   }, []);
 
   return (
-    <section id="contacto" ref={sectionRef} className="fade-up py-16 md:py-24 bg-gradient-to-b from-white to-lila/30">
-      <div className="container mx-auto px-4">
+      <section id="contacto" ref={sectionRef} className="fade-up py-16 md:py-24">
+        <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-violetaOscuro mb-12">
           Contacto
         </h2>

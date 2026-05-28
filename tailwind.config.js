@@ -16,6 +16,8 @@ module.exports = {
         violeta: "#6b21a8",
         violetaClaro: "#a855f7",
         violetaOscuro: "#4c1d95",
+        fondoClaro: "#f0f0f0",
+        fondoClaro2: "#e5e5e5",
       },
       animation: {
         heartbeat: "heartbeat 1.5s ease-in-out infinite",

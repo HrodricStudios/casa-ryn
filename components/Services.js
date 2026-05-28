@@ -25,7 +25,7 @@ const Services = () => {
   }, []);
 
   return (
-    <section id="servicios" ref={sectionRef} className="fade-up py-16 md:py-24 bg-white">
+      <section id="servicios" ref={sectionRef} className="fade-up py-16 md:py-24">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-violetaOscuro mb-12">
           Nuestros Servicios

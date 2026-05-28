@@ -49,7 +49,7 @@ const ProductsCarousel = () => {
   const scrollNext = () => emblaApi && emblaApi.scrollNext();
 
   return (
-    <section id="productos" ref={sectionRef} className="fade-up py-16 md:py-24 bg-white">
+    <section id="productos" ref={sectionRef} className="fade-up py-16 md:py-24 bg-transparent">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-violetaOscuro mb-12">
           Nuestros Productos
